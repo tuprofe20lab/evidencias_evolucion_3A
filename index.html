@@ -1,48 +1,880 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TuProfe20 Lab | Evidencias de la evolución</title><style>
-:root{--bg:#050f20;--panel:#0d2342;--line:#245377;--cyan:#33e0fa;--yellow:#ffce59;--green:#53e5ac;--pink:#f992b8;--white:#f5fbff;--muted:#a6c3d9}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;font-family:Inter,'Segoe UI',Arial,sans-serif;color:var(--white);background:#020915;overflow:hidden}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}#stars{position:fixed;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(circle at 10% 20%,#77cafa 1px,transparent 2px),radial-gradient(circle at 48% 70%,#8de8df 1px,transparent 2px),radial-gradient(circle at 80% 36%,#9fd9ff 1px,transparent 2px);background-size:133px 143px,183px 205px,209px 167px}#deck{position:absolute;inset:0 0 59px;overflow:hidden;background:radial-gradient(ellipse at 70% 15%,#10365b 0,transparent 42%),radial-gradient(ellipse at 5% 85%,#123752 0,transparent 40%),linear-gradient(140deg,#061022,#07182a)}.slide{position:absolute;inset:0;display:none;padding:clamp(20px,3vw,52px) clamp(32px,5vw,95px);overflow:auto;animation:appear .36s ease both}.slide.active{display:flex;flex-direction:column}@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}h1,h2,h3,p{margin:0}h1{font-size:clamp(42px,5.5vw,92px);line-height:1.04;font-weight:900;letter-spacing:-.05em}h2{font-size:clamp(31px,3.65vw,60px);line-height:1.1;font-weight:850;letter-spacing:-.038em}h3{font-size:clamp(23px,2.2vw,36px)}p{font-size:clamp(18px,1.55vw,26px);line-height:1.46}small,.micro{font-size:clamp(13px,.93vw,16px);color:var(--muted)}.kicker{font-size:14px;font-weight:850;letter-spacing:.23em;color:var(--cyan);text-transform:uppercase;margin-bottom:16px}.sub{font-size:clamp(20px,2vw,34px);color:#c8ddef;margin-top:17px;max-width:1000px}.accent{color:var(--cyan)}.gold{color:var(--yellow)}.green{color:var(--green)}.header{margin-bottom:clamp(16px,2vw,32px)}.header h2{max-width:1220px}.layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,42px);flex:1;min-height:0}.layout.wide{grid-template-columns:1.2fr .8fr}.layout.reverse{grid-template-columns:.8fr 1.2fr}.card{background:linear-gradient(145deg,rgba(21,57,92,.93),rgba(11,31,55,.95));border:1px solid rgba(96,200,248,.25);border-radius:23px;padding:clamp(16px,2.2vw,32px);box-shadow:0 16px 42px #010a18aa}.card.glow{box-shadow:0 0 0 1px #1f8fbf44,0 16px 50px #041628}.card.soft{background:#0c2136bb}.card h3{color:var(--cyan);margin-bottom:12px}.bigline{font-size:clamp(23px,2.6vw,44px);font-weight:780;line-height:1.3}.hint{border-left:5px solid var(--yellow);padding:14px 20px;background:#e9ac2914;border-radius:0 12px 12px 0;margin-top:20px;font-size:clamp(17px,1.4vw,23px)}.pill{display:inline-block;background:#103950;border:1px solid #2a7289;color:#b2faff;padding:9px 14px;border-radius:40px;font-weight:750;font-size:15px;margin:5px 8px 5px 0}.pill.goldpill{border-color:#947534;color:#ffe29a}.btn{border:1px solid #2d8eb9;background:linear-gradient(135deg,#1477aa,#0f4775);padding:12px 20px;color:white;border-radius:14px;font-weight:800;font-size:clamp(14px,1vw,18px);box-shadow:0 7px 20px #011321bb;transition:transform .15s,filter .15s}.btn:hover{transform:translateY(-2px);filter:brightness(1.16)}.btn.secondary{background:#112b44;color:#d7f5ff}.btn.yellow{background:#ffc952;color:#062239;border-color:#ffde86}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.title-art{height:100%;min-height:370px;display:grid;place-items:center;position:relative}.halo{position:absolute;width:min(38vw,510px);height:min(38vw,510px);border:1px solid #2dd9ff55;border-radius:50%;box-shadow:0 0 80px #00aaff33,inset 0 0 80px #129bd333;animation:pulse 5s infinite}.halo:before,.halo:after{content:"";position:absolute;inset:12%;border:1px dashed #5ecdfb66;border-radius:50%;animation:spin 30s linear infinite}.halo:after{inset:26%;animation-direction:reverse}@keyframes pulse{50%{transform:scale(1.04);opacity:.7}}@keyframes spin{to{transform:rotate(360deg)}}.title-art svg{width:85%;max-height:530px;filter:drop-shadow(0 10px 28px #0dd6ff55);z-index:1}.diagram{width:100%;height:100%;max-height:490px;min-height:240px;overflow:visible}.diagram text{font-family:'Segoe UI',Arial;font-weight:700}.nodes{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:22px}.node{border:1px solid #2c7fa4;border-radius:18px;padding:21px 10px;text-align:center;background:#0c2a47;cursor:pointer;transition:.2s}.node:hover{transform:translateY(-5px);border-color:var(--cyan);background:#104265}.node .ico{font-size:42px;margin-bottom:10px}.node strong{display:block;font-size:clamp(15px,1.4vw,24px)}.node span{font-size:clamp(12px,.85vw,16px);color:var(--muted)}.reveal{display:none;margin-top:16px;padding:17px;border:1px solid #3e9aaf;border-radius:16px;background:#0d3948}.reveal.show{display:block;animation:appear .2s}.question{font-size:clamp(23px,2.8vw,45px);font-weight:850;line-height:1.3}.choice{display:block;width:100%;padding:16px 20px;margin:10px 0;border:1px solid #366283;border-radius:15px;color:var(--white);font-size:clamp(17px,1.6vw,26px);font-weight:700;text-align:left;background:#102943;transition:.15s}.choice:hover{background:#174b70;border-color:var(--cyan)}.choice.selected{background:#154a67;border-color:var(--cyan)}.choice.correct{background:#124c3f;border-color:#48e5a1}.choice.wrong{background:#633047;border-color:#ff8c9e}.choice .letter{color:var(--yellow);padding-right:17px}.score{font-size:clamp(45px,7vw,98px);font-weight:900;color:var(--yellow)}.media-preview{border:1px solid #4b88a3;border-radius:22px;min-height:250px;background:radial-gradient(circle at 70% 30%,#1e607c99,transparent 50%),linear-gradient(155deg,#102747,#0a1728);display:grid;place-items:center;position:relative;overflow:hidden}.media-preview .play{font-size:60px;line-height:1;display:grid;place-items:center;border:3px solid #70ecff;border-radius:50%;height:125px;width:125px;box-shadow:0 0 40px #19d6ff66;animation:pulse 3s infinite}.media-preview .media-caption{position:absolute;bottom:18px;left:22px;font-size:16px;letter-spacing:.1em;color:#bcd8ea}.timeline{display:flex;gap:12px;align-items:stretch;margin-top:18px}.timebox{flex:1;padding:18px 14px;border-radius:14px;border:1px solid #287b9a;background:#0c2b48;text-align:center}.timebox b{font-size:23px;color:var(--yellow)}.timebox div{font-size:17px;margin-top:6px}.rank{display:flex;gap:13px;align-items:center;margin-bottom:12px}.rank b{background:#135b85;border-radius:12px;padding:13px;color:var(--cyan);min-width:55px;text-align:center}.rank p{font-size:clamp(17px,1.3vw,23px)}.footer{position:absolute;left:0;right:0;bottom:0;height:59px;background:#06192b;border-top:1px solid #245277;display:flex;align-items:center;padding:0 20px;gap:14px;z-index:20}.brand{font-weight:900;color:var(--cyan);letter-spacing:.02em;font-size:19px}.nav{margin-left:auto;display:flex;gap:8px;align-items:center}.nav button{font-size:18px;background:#12324d;border:1px solid #336886;color:#dcf5ff;padding:7px 14px;border-radius:9px}.nav button:hover{background:#195478}.progress{height:4px;position:absolute;bottom:58px;left:0;background:linear-gradient(90deg,#39e8ff,#62d8a2);width:0;z-index:21;transition:width .25s}.tinylabel{color:#95b4cc;font-size:13px}.glass{background:#0d253be9;border:1px solid #235777;padding:15px;border-radius:15px}.steps{counter-reset:step}.steps>div{counter-increment:step;padding:13px 17px;margin-bottom:9px;background:#0d2e4d;border:1px solid #2b6a8e;border-radius:12px;font-size:clamp(16px,1.4vw,23px)}.steps>div:before{content:counter(step);display:inline-grid;place-items:center;width:30px;height:30px;background:#0b9fc5;color:#051b2c;border-radius:50%;font-weight:900;margin-right:14px}.hidden{display:none!important}.chip{font-weight:800;font-size:16px;color:#042034;background:var(--yellow);padding:8px 12px;border-radius:10px;display:inline-block}.hero-stat{font-size:clamp(52px,6vw,105px);line-height:1;color:var(--cyan);font-weight:900}.input{padding:14px 16px;background:#e9f8ff;color:#072338;border-radius:12px;border:2px solid #51cce8;width:100%;font-size:20px}.toolbar{position:fixed;right:18px;top:12px;z-index:40;display:flex;gap:8px}.toolbar button{background:#133955cf;border:1px solid #4386a9;color:#daeffc;padding:8px 12px;border-radius:10px;font-weight:700}.teacher-note{display:none;position:absolute;right:20px;bottom:75px;max-width:470px;background:#fff5cf;color:#1c2741;padding:20px;border-radius:14px;z-index:60;box-shadow:0 12px 30px #0007}.teacher-note.show{display:block}.teacher-note b{display:block;margin-bottom:6px}.quizmeta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:22px}.quizmeta span{border:1px solid #2f7b9e;border-radius:10px;padding:9px 14px;font-size:18px}.keygrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.keygrid div{padding:20px;border-radius:15px;background:#123a50;text-align:center;font-weight:800;font-size:27px}.keygrid b{color:var(--yellow)}.source{margin-top:auto;color:#8eabc4;font-size:12px}.source a{color:#93d9ef}.thumburl{display:inline-block;color:var(--cyan);font-size:15px}.svg-panel{background:radial-gradient(ellipse at 50% 30%,#1c5b7b55,#04172b 70%);border:1px solid #245578;border-radius:22px;padding:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}.toprow{display:flex;justify-content:space-between;align-items:center;gap:25px}.tip{color:#b8d6eb;font-size:17px}.spaced{display:flex;justify-content:space-between;gap:20px;align-items:center}.fossilrow{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.fossilrow>div{background:#123551;border:1px solid #336a8a;border-radius:15px;padding:16px;text-align:center}.fossilrow svg{max-width:100%;height:120px}.strip{display:flex;gap:10px;flex-wrap:wrap}.tab{border:1px solid #327d99;border-radius:10px;background:#0e3556;padding:9px 15px;color:#e4faff;font-weight:800}.tab.active{background:#0b8ab6;color:white}.two{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.source-link{color:#7ae9ff;text-decoration:none;border-bottom:1px dotted #7ae9ff}.source-link:hover{color:white}.warn{font-size:15px;color:#ebdba9}@media(max-width:800px){.slide{padding:25px 24px}.layout,.layout.wide,.layout.reverse{grid-template-columns:1fr}.nodes{grid-template-columns:repeat(3,1fr)}.card{padding:16px}.footer{padding:0 10px}.brand{font-size:14px}.title-art{min-height:200px}.slide{overflow:auto}.diagram{max-height:260px}.toolbar{top:5px}}@media print{body{overflow:visible;background:white}.slide{display:none!important}.footer,.toolbar{display:none}}
-</style></head><body><div id="stars"></div><div class="toolbar"><button onclick="toggleNotes()" title="Notas docentes (N)">📝 Docente</button><button onclick="toggleFullscreen()" title="Pantalla completa (F)">⛶ Pantalla</button></div><main id="deck">
-<section class="slide active" data-note="Inicio: preguntar ¿qué pruebas permiten afirmar que los seres vivos han evolucionado? 2 min."><div class="kicker">TuProfe20 Lab · Ciencia y Tecnología · 3.º secundaria</div><div class="layout wide"><div style="display:flex;flex-direction:column;justify-content:center;gap:20px"><span class="chip" style="align-self:flex-start">MISIÓN CIENTÍFICA · 80 MIN</span><h1>EVIDENCIAS<br>DE LA <span class="accent">EVOLUCIÓN</span></h1><p class="sub">Cinco caminos para reconstruir la historia de la vida.</p><div class="strip"><span class="pill">Fósiles</span><span class="pill">Anatomía</span><span class="pill">Embriones</span><span class="pill">ADN</span><span class="pill">Biogeografía</span></div><p style="font-size:18px;color:#a9c3d5">Investiga · Debate · Descubre · Demuestra</p></div><div class="title-art"><div class="halo"></div><svg viewBox="0 0 500 500" aria-label="ADN en una esfera tecnológica"><defs><linearGradient id="helix" x1="0" x2="1"><stop stop-color="#3fe9ff"/><stop offset="1" stop-color="#43e7aa"/></linearGradient></defs><circle cx="250" cy="250" r="190" fill="#0c426033" stroke="#41dbed" stroke-width="2"/><circle cx="250" cy="250" r="153" fill="none" stroke="#f5c45a66" stroke-dasharray="6 9"/><g id="hero-dna"></g><text x="250" y="465" text-anchor="middle" fill="#a5d4e8" font-size="15" letter-spacing="4">LA VIDA DEJA EVIDENCIAS</text></svg></div></div></section>
-<section class="slide" data-note="8 min: observar las dos figuras, recoger 3 hipótesis sin revelar respuesta."><div class="header"><div class="kicker">01 / El gran misterio</div><h2>¿Coincidencia... o <span class="accent">parentesco</span>?</h2></div><div class="layout"><div class="svg-panel"><svg class="diagram" viewBox="0 0 520 380" aria-label="Esqueleto estilizado de brazo humano"><text x="260" y="33" fill="#c9e5f2" font-size="26" text-anchor="middle">BRAZO HUMANO</text><g stroke-linecap="round" fill="none"><path d="M235 60L252 200" stroke="#f9cb5a" stroke-width="27"/><path d="M252 208L203 312" stroke="#36d9fa" stroke-width="16"/><path d="M264 208L310 309" stroke="#67e6aa" stroke-width="16"/><path d="M206 315L188 344M210 316L213 353M220 316L240 353M300 315L319 348" stroke="#e7f7ff" stroke-width="8"/></g><circle cx="247" cy="204" r="19" fill="#e4eef2"/><circle cx="232" cy="61" r="21" fill="#e4eef2"/><text x="350" y="150" fill="#ffdc77" font-size="22">Húmero</text><text x="60" y="273" fill="#5df0ff" font-size="20">Radio</text><text x="335" y="275" fill="#8effbc" font-size="20">Cúbito</text></svg></div><div class="svg-panel"><svg class="diagram" viewBox="0 0 520 380" aria-label="Huesos estilizados de aleta de ballena"><text x="260" y="33" fill="#c9e5f2" font-size="26" text-anchor="middle">ALETA DE BALLENA</text><path d="M85 150 Q240 60 459 280Q240 315 85 150" fill="#0b718e44" stroke="#32d9ff" stroke-width="2"/><g stroke-linecap="round" fill="none"><path d="M95 145L210 183" stroke="#f9cb5a" stroke-width="30"/><path d="M218 176L303 163" stroke="#36d9fa" stroke-width="16"/><path d="M218 196L303 219" stroke="#67e6aa" stroke-width="16"/><path d="M315 155L438 244M314 177L425 265M313 202L394 277M304 223L362 287" stroke="#e7f7ff" stroke-width="10"/></g><circle cx="215" cy="186" r="17" fill="#e7eef1"/><text x="270" y="350" fill="#cfebff" font-size="21" text-anchor="middle">Funciones distintas · Huesos correspondientes</text></svg></div></div><div class="hint"><b>Pregúntales:</b> ¿Por qué dos extremidades tan diferentes conservan una organización ósea semejante?</div></section>
-<section class="slide" data-note="Conectar con clases anteriores: selección natural, adaptación, evolución poblacional. 3 minutos."><div class="header"><div class="kicker">02 / Nuestra misión</div><h2>¿Cómo trabaja un <span class="accent">científico</span>?</h2></div><div class="layout"><div class="card glow"><h3>Una afirmación científica necesita...</h3><div class="steps"><div>Observaciones verificables</div><div>Comparaciones y mediciones</div><div>Hipótesis contrastables</div><div>Conclusiones sustentadas</div></div><div class="hint">¿Qué evidencia dejaría una especie que vivió hace millones de años?</div></div><div class="svg-panel"><svg class="diagram" viewBox="0 0 480 400"><circle cx="240" cy="180" r="130" fill="#0c566944" stroke="#39dffc" stroke-width="4"/><circle cx="240" cy="180" r="90" fill="none" stroke="#29d5bd" stroke-width="3" stroke-dasharray="8 12"/><g fill="#51e2fc"><circle cx="178" cy="120" r="13"/><circle cx="317" cy="182" r="13"/><circle cx="205" cy="271" r="13"/></g><g stroke="#ffd06a" stroke-width="5" fill="none"><path d="M176 120L220 176 315 180 205 270 176 120"/></g><text x="240" y="365" fill="#b9eaff" font-size="23" text-anchor="middle">OBSERVAR → EXPLICAR</text></svg></div></div></section>
-<section class="slide" data-note="Mostrar mapa de cinco evidencias. Cada tarjeta puede pulsarse para descubrir su aporte. 3 min."><div class="header"><div class="kicker">03 / Mapa del conocimiento · Interactivo</div><h2>Un misterio. <span class="accent">Cinco evidencias.</span></h2><p class="sub">Pulsa cada tarjeta para revelar qué nos ayuda a descubrir.</p></div><div class="nodes"><div class="node" onclick="showEvidence(0)"><div class="ico">🦴</div><strong>Fósiles</strong><span>Registro del pasado</span></div><div class="node" onclick="showEvidence(1)"><div class="ico">🦴</div><strong>Anatomía</strong><span>Huesos homólogos</span></div><div class="node" onclick="showEvidence(2)"><div class="ico">🥚</div><strong>Embriología</strong><span>Desarrollo compartido</span></div><div class="node" onclick="showEvidence(3)"><div class="ico">🧬</div><strong>ADN</strong><span>Semejanza genética</span></div><div class="node" onclick="showEvidence(4)"><div class="ico">🌎</div><strong>Biogeografía</strong><span>Distribución de especies</span></div></div><div id="evidence-reveal" class="reveal" style="font-size:25px"></div><div class="hint" style="margin-top:auto">La convergencia entre distintos tipos de datos fortalece la explicación científica de la evolución.</div></section>
-<section class="slide" data-note="Documental 1: sugerencia de fragmento de unos 8 minutos más debate. Abrir enlace y controlar pausas manualmente."><div class="header"><div class="kicker">04 / Cine científico · Documental 1</div><h2>Los fósiles: <span class="accent">mensajes del pasado</span></h2></div><div class="layout wide"><div class="media-preview"><div style="text-align:center"><div class="play" style="margin:auto">▶</div><div style="font-size:30px;font-weight:900;margin-top:18px">GRANDES TRANSICIONES</div><div style="font-size:21px;color:#b0e8f0;margin-top:5px">El origen de los humanos</div></div><div class="media-caption">HHMI BIOINTERACTIVE · DOCUMENTAL REAL</div></div><div class="card"><h3>Antes de reproducir</h3><p>¿Cómo puede un hueso fosilizado contarnos cómo vivía y se movía un organismo?</p><div class="actions"><button class="btn yellow" onclick="openLink('https://www.biointeractive.org/es/classroom-resources/grandes-transiciones-el-origen-de-los-humanos')">▶ Abrir documental</button></div><div class="hint">Observa las estructuras óseas y cómo los investigadores interpretan su forma.</div><div class="source">Fuente: HHMI BioInteractive. Abre el enlace para acceder a versiones audiovisuales oficiales.</div></div></div></section>
-<section class="slide" data-note="Pausar documental y recoger hipótesis. Puede revelar la síntesis con el botón."><div class="header"><div class="kicker">05 / Discusión del documental</div><h2>Del fósil a la <span class="accent">conclusión</span></h2></div><div class="layout"><div class="card"><div class="bigline">01 · ¿Qué características de un fósil permiten inferir cómo se desplazaba un animal?</div><hr style="border-color:#205778;margin:22px 0"><div class="bigline">02 · ¿Un fósil revela toda la historia de una especie?</div><div class="actions"><button class="btn" onclick="toggleReveal('fossil-ans')">Revelar explicación</button></div><div id="fossil-ans" class="reveal">La forma de huesos y articulaciones ayuda a inferir locomoción. El registro fósil es incompleto: se interpreta junto con dataciones, contexto geológico y anatomía comparada.</div></div><div class="svg-panel"><svg class="diagram" viewBox="0 0 460 390"><rect x="30" y="55" width="400" height="87" rx="10" fill="#3f6071"/><rect x="30" y="146" width="400" height="84" rx="10" fill="#786748"/><rect x="30" y="234" width="400" height="90" rx="10" fill="#98734f"/><path d="M85 280q42-35 80 1q-38 35-80-1m80 1q12-22 35-23m-35 23q10 25 34 27" stroke="#f8d9a6" stroke-width="8" fill="none"/><g fill="#f6d5a1"><ellipse cx="320" cy="190" rx="42" ry="16"/><path d="M280 185l-32-17v34z"/></g><text x="230" y="32" text-anchor="middle" fill="#c2e9f1" font-size="24">ESTRATOS ROCOSOS</text><text x="230" y="366" text-anchor="middle" fill="#fce6a4" font-size="22">Capas inferiores suelen ser más antiguas*</text></svg><small>*En una sucesión sedimentaria que no haya sido alterada.</small></div></div></section>
-<section class="slide" data-note="3 minutos: distinguir fósil, edad relativa y evidencia de cambio. Preguntar sobre Archaeopteryx."><div class="header"><div class="kicker">06 / Evidencia 1 · Paleontología</div><h2>El registro <span class="accent">fósil</span></h2></div><div class="layout"><div class="card"><h3>¿Qué es un fósil?</h3><p>Un resto, huella o señal de un organismo antiguo conservado por procesos naturales.</p><div class="steps" style="margin-top:18px"><div>Permite estudiar formas de vida extintas.</div><div>Ayuda a reconstruir cambios en el tiempo.</div><div>Aporta datos sobre ambientes del pasado.</div></div><div class="actions"><button class="btn secondary" onclick="openLink('https://humanorigins.si.edu/evidence/human-fossils')">Ver fósiles reales · Smithsonian ↗</button></div></div><div class="svg-panel"><svg class="diagram" viewBox="0 0 520 390"><path d="M42 52Q270 23 475 62L484 337Q260 362 45 326Z" fill="#8b6d49" stroke="#ceaa73" stroke-width="7"/><path d="M80 84Q290 67 447 90M80 298Q290 324 446 302" stroke="#c6a575" stroke-width="4" stroke-dasharray="15 10" fill="none"/><g transform="translate(250 205) rotate(-14)" fill="none" stroke="#edd6a3" stroke-width="14" stroke-linecap="round"><path d="M-125 0Q-85-65 0-10Q80 35 118-8"/><path d="M-100-8Q-100 63-40 68Q40 63 50 5"/><path d="M-45 16L-75 89M0 17L0 96M52 5L79 90"/></g><text x="260" y="372" text-anchor="middle" fill="#b6deef" font-size="23">ESQUEMA ILUSTRATIVO · NO FOTOGRAFÍA</text></svg></div></div></section>
-<section class="slide" data-note="3 minutos: homología; no decir que cualquier parecido prueba ancestro común."><div class="header"><div class="kicker">07 / Evidencia 2 · Anatomía comparada</div><h2>Un mismo plan, <span class="accent">distintas funciones</span></h2></div><div class="layout wide"><div class="svg-panel"><svg class="diagram" viewBox="0 0 720 395"><g font-size="23" fill="#eaf8ff" text-anchor="middle"><text x="110" y="38">HUMANO</text><text x="277" y="38">BALLENA</text><text x="455" y="38">MURCIÉLAGO</text><text x="625" y="38">GATO</text></g><g fill="none" stroke-linecap="round"><g transform="translate(95,80)"><path d="M0 0L10 112" stroke="#ffd267" stroke-width="22"/><path d="M10 112L-28 216" stroke="#50d9ef" stroke-width="13"/><path d="M21 112L50 218" stroke="#69e4ab" stroke-width="13"/><path d="M-26 220L-37 273M-16 222L-10 274M-7 222L13 267M47 220L63 263" stroke="#fff1da" stroke-width="7"/></g><g transform="translate(246,100) rotate(-35)"><path d="M0 0L10 100" stroke="#ffd267" stroke-width="22"/><path d="M10 100L-16 177" stroke="#50d9ef" stroke-width="13"/><path d="M23 102L50 183" stroke="#69e4ab" stroke-width="13"/><path d="M-16 185L-23 263M-5 187L1 263M15 185L25 260M47 186L50 266" stroke="#fff1da" stroke-width="8"/></g><g transform="translate(442,88)"><path d="M0 0L0 92" stroke="#ffd267" stroke-width="20"/><path d="M0 92L-30 165" stroke="#50d9ef" stroke-width="12"/><path d="M7 92L30 166" stroke="#69e4ab" stroke-width="12"/><path d="M-30 165L-100 265M-22 160L-47 276M10 163L65 276M30 167L110 261" stroke="#fff1da" stroke-width="6"/><path d="M-95 262Q0 215 110 261L30 167" stroke="#39d7ed" stroke-width="2"/></g><g transform="translate(615,95) rotate(-12)"><path d="M0 0L15 100" stroke="#ffd267" stroke-width="21"/><path d="M15 100L-4 185" stroke="#50d9ef" stroke-width="13"/><path d="M25 100L48 184" stroke="#69e4ab" stroke-width="13"/><path d="M-4 187L-20 245M5 188L8 248M47 188L58 247M37 188L32 245" stroke="#fff1da" stroke-width="7"/></g></g><text x="360" y="388" text-anchor="middle" fill="#bee7f9" font-size="20">Colores = huesos correspondientes · Esquema simplificado</text></svg></div><div class="card"><h3>ESTRUCTURAS HOMÓLOGAS</h3><p>Comparten un origen evolutivo, aunque sus funciones sean diferentes.</p><div style="margin:20px 0"><span class="pill goldpill">Húmero</span><span class="pill">Radio</span><span class="pill">Cúbito</span><span class="pill">Huesos de la mano</span></div><div class="hint">¿Qué nos sugiere la coincidencia en la organización de estos huesos?</div></div></div></section>
-<section class="slide" data-note="3 minutos: analogía funcional vs homología anatómica. Pedir contraejemplo."><div class="header"><div class="kicker">08 / Reto de clasificación</div><h2>¿Homólogas o <span class="accent">análogas</span>?</h2></div><div class="two" style="flex:1"><div class="card"><h3>Brazo humano y aleta de ballena</h3><p>Huesos correspondientes y funciones diferentes.</p><div class="actions"><button class="btn secondary" onclick="judgeClass('a','hom')">Homólogas</button><button class="btn secondary" onclick="judgeClass('a','ana')">Análogas</button></div><div id="result-a" class="reveal"></div></div><div class="card"><h3>Ala de mariposa y ala de ave</h3><p>Dos órganos de vuelo con diferente origen estructural.</p><div class="actions"><button class="btn secondary" onclick="judgeClass('b','hom')">Homólogas</button><button class="btn secondary" onclick="judgeClass('b','ana')">Análogas</button></div><div id="result-b" class="reveal"></div></div></div><div class="hint">Importante: el ala de un ave y su extremidad anterior también contienen huesos homólogos a los de otros vertebrados.</div></section>
-<section class="slide" data-note="3 minutos: embriones no son idénticos; ejemplo estructuras faríngeas y cola embrionaria."><div class="header"><div class="kicker">09 / Evidencia 3 · Embriología</div><h2>Huellas del parentesco <span class="accent">en el desarrollo</span></h2></div><div class="layout"><div class="svg-panel"><svg class="diagram" viewBox="0 0 530 385"><g><text x="90" y="35" fill="#a5dcf2" font-size="24">VERTEBRADO A</text><text x="300" y="35" fill="#a5dcf2" font-size="24">VERTEBRADO B</text><path d="M120 95C32 100 25 225 133 255C187 271 229 220 186 183C161 164 141 176 135 201" stroke="#7fdbbd" stroke-width="32" stroke-linecap="round" fill="none"/><path d="M352 95C258 96 255 232 358 253C426 266 455 209 405 171C378 157 365 185 364 195" stroke="#6ed6f6" stroke-width="32" stroke-linecap="round" fill="none"/><g stroke="#0b486c" stroke-width="5"><path d="M129 125l24 6m-28 8l28 6m-28 9l26 6M360 123l24 6m-25 9l25 6m-26 9l25 6"/></g><g fill="#0a2a44"><circle cx="91" cy="112" r="8"/><circle cx="326" cy="112" r="8"/></g><path d="M160 253q40 43 83 20M395 251q40 41 83 17" stroke="#f6d26f" stroke-width="12" fill="none" stroke-linecap="round"/></g><text x="260" y="335" text-anchor="middle" fill="#fbe3a0" font-size="21">Estructuras faríngeas y cola embrionaria</text><text x="260" y="364" text-anchor="middle" fill="#b9d4df" font-size="16">Esquema conceptual, no comparación a escala</text></svg></div><div class="card"><h3>¿Qué se compara?</h3><p>Determinadas estructuras del desarrollo temprano de vertebrados.</p><div class="hint">Los embriones de especies diferentes <b>no son idénticos</b>. Las semejanzas específicas pueden aportar información sobre un origen común.</div><div class="actions"><button class="btn" onclick="openLink('https://evolution.berkeley.edu/lines-of-evidence/')">Consultar evidencia científica ↗</button></div></div></div></section>
-<section class="slide" data-note="4 minutos: pedir contar coincidencias en fragmentos ficticios y concluir con cautela."><div class="header"><div class="kicker">10 / Evidencia 4 · Biología molecular</div><h2>El ADN guarda <span class="accent">pistas del parentesco</span></h2></div><div class="layout"><div class="card"><h3>Comparador genético interactivo</h3><p style="font-size:18px;color:#c1dcec;margin-bottom:20px">Secuencias inventadas para practicar la comparación (no son datos de especies reales).</p><div id="dna-seqs" style="font-family:Consolas,monospace;font-size:clamp(20px,2.1vw,34px);line-height:1.9;background:#051829;padding:15px;border-radius:12px;letter-spacing:.11em"></div><div class="actions"><button class="btn" onclick="compareDna()">Comparar secuencias</button><button class="btn secondary" onclick="resetDna()">Reiniciar</button></div><div id="dna-answer" class="reveal"></div></div><div class="svg-panel"><svg class="diagram" viewBox="0 0 440 420"><g id="dna-vertical"></g><text x="220" y="399" fill="#a6d9ec" font-size="20" text-anchor="middle">ADN · Información heredable</text></svg></div></div></section>
-<section class="slide" data-note="4 minutos: biogeografía y pinzones, distribución y diversificación. Aclarar que una sola isla no determina una especie por sí misma."><div class="header"><div class="kicker">11 / Evidencia 5 · Biogeografía</div><h2>Las islas cuentan <span class="accent">historias evolutivas</span></h2></div><div class="layout wide"><div class="svg-panel"><svg class="diagram" viewBox="0 0 650 410"><defs><filter id="softGlow"><feGaussianBlur stdDeviation="5"/></filter></defs><g fill="#0f797f" stroke="#53c3ad" stroke-width="4"><path d="M65 130q35-65 102-23t10 84q-68 19-112-61"/><path d="M285 80q25-55 87-13t-13 75q-63 3-74-62"/><path d="M401 245q73-63 134 4t-16 81q-81 7-118-85"/><path d="M118 294q26-41 82-10t-19 64q-64 0-63-54"/></g><g fill="none" stroke="#ffda80" stroke-width="3" stroke-dasharray="9 10"><path d="M169 156L300 100L435 262M169 156L150 295"/></g><g fill="#e7faff" stroke="#2eb1ce" stroke-width="3"><path d="M106 120q44-44 60 4q-12 28-50 22z"/><path d="M326 97q38-48 61 0q-20 30-53 18z"/><path d="M442 273q48-35 55 13q-22 35-50 9z"/></g><g fill="#f6d46c"><path d="M166 121l31-8-29 21z"/><path d="M382 95l37 10-35 5z"/><path d="M493 279l49-11-45 29z"/></g><text x="330" y="392" text-anchor="middle" fill="#abd7e5" font-size="22">Islas y aves · esquema conceptual</text></svg></div><div class="card"><h3>Pinzones de Galápagos</h3><p>Distribución, aislamiento y diferentes fuentes de alimento ayudan a explicar la diversificación de poblaciones.</p><div class="hint">Pregunta: ¿Qué ocurriría si dos poblaciones permanecieran separadas durante muchas generaciones?</div><div class="actions"><button class="btn secondary" onclick="openLink('https://www.biointeractive.org/es/classroom-resources/el-origen-de-las-especies-el-pico-del-pinzon')">Explorar el caso real ↗</button></div></div></div></section>
-<section class="slide" data-note="Documental 2: escoger 8 minutos del documental de HHMI; pausas con preguntas. 15 min incluyendo discusión."><div class="header"><div class="kicker">12 / Cine científico · Documental 2</div><h2>La evolución <span class="accent">ante nuestros ojos</span></h2></div><div class="layout wide"><div class="media-preview"><div style="text-align:center"><div class="play" style="margin:auto">▶</div><div style="font-size:29px;font-weight:900;margin-top:18px">EL PICO DEL PINZÓN</div><div style="font-size:21px;color:#addde9;margin-top:5px">Selección natural en Galápagos</div></div><div class="media-caption">HHMI BIOINTERACTIVE · 15 MIN 54 SEG · ESPAÑOL</div></div><div class="card"><h3>Observa tres pistas</h3><div class="steps"><div>Variación en los picos</div><div>Cambios en alimentos disponibles</div><div>Sobrevivencia y reproducción</div></div><div class="actions"><button class="btn yellow" onclick="openLink('https://www.biointeractive.org/es/classroom-resources/el-origen-de-las-especies-el-pico-del-pinzon')">▶ Abrir documental oficial</button></div><div class="source">HHMI BioInteractive · investigación de Peter y Rosemary Grant.</div></div></div></section>
-<section class="slide" data-note="Debate guiado de 5 min: discutir selección natural y evitar interpretación de cambio intencional."><div class="header"><div class="kicker">13 / Detén · Piensa · Explica</div><h2>¿Qué pasó con los <span class="accent">pinzones</span>?</h2></div><div class="layout"><div class="card"><div class="bigline">1. ¿Por qué no todos los pinzones tienen el mismo pico?</div><hr style="border-color:#296183;margin:24px 0"><div class="bigline">2. ¿Qué sucede cuando cambia la disponibilidad de semillas?</div></div><div class="card"><div class="bigline">3. ¿Cambia cada ave porque “necesita” hacerlo?</div><div class="actions"><button class="btn" onclick="toggleReveal('finch-reveal')">Mostrar explicación científica</button></div><div class="reveal" id="finch-reveal">No. La selección natural actúa sobre variaciones heredables ya existentes en una población. Los individuos con características favorables pueden dejar más descendientes; así cambian las frecuencias de rasgos durante generaciones.</div></div></div></section>
-<section class="slide" data-note="Trabajo cooperativo 5 equipos x 5 estudiantes; 6-7 minutos. Cada equipo formula observación y conclusión."><div class="header"><div class="kicker">14 / Laboratorio en aula</div><h2><span class="accent">25 estudiantes.</span> Cinco misiones.</h2></div><div class="nodes" style="margin-top:7px"><div class="node"><div class="ico">🦴</div><strong>Equipo 1</strong><span>Fósiles</span></div><div class="node"><div class="ico">🦾</div><strong>Equipo 2</strong><span>Anatomía</span></div><div class="node"><div class="ico">🥚</div><strong>Equipo 3</strong><span>Embriones</span></div><div class="node"><div class="ico">🧬</div><strong>Equipo 4</strong><span>ADN</span></div><div class="node"><div class="ico">🌎</div><strong>Equipo 5</strong><span>Biogeografía</span></div></div><div class="card" style="margin-top:20px"><h3>Misión: explicar una evidencia</h3><p>«Nuestra evidencia es ________. Observamos que ________. Esto respalda la evolución porque ________.»</p><div class="actions"><button class="btn" onclick="startTimer(180)">▶ Cronómetro 3 minutos</button><button class="btn secondary" onclick="startTimer(300)">▶ Cronómetro 5 minutos</button><button class="btn secondary" onclick="stopTimer()">Detener</button><span id="group-timer" class="chip">05:00</span></div></div></section>
-<section class="slide" data-note="Síntesis visual antes del examen: clic para mostrar etiqueta. 3 min."><div class="header"><div class="kicker">15 / Síntesis antes del reto</div><h2>Las cinco piezas de una <span class="accent">misma historia</span></h2></div><div class="nodes"><div class="node" onclick="showSummary(0)"><div class="ico">🦴</div><strong>Fósiles</strong><span>Pasado</span></div><div class="node" onclick="showSummary(1)"><div class="ico">🦾</div><strong>Anatomía</strong><span>Origen común</span></div><div class="node" onclick="showSummary(2)"><div class="ico">🥚</div><strong>Embriología</strong><span>Desarrollo</span></div><div class="node" onclick="showSummary(3)"><div class="ico">🧬</div><strong>ADN</strong><span>Genes</span></div><div class="node" onclick="showSummary(4)"><div class="ico">🌎</div><strong>Biogeografía</strong><span>Distribución</span></div></div><div id="summary-answer" class="reveal" style="font-size:27px"></div><div class="card" style="margin-top:25px;text-align:center"><div class="bigline">La evolución se sustenta en <span class="accent">evidencias independientes y convergentes.</span></div></div></section>
-<section class="slide" data-note="Práctica final: modo docente proyecta preguntas y cada alumno marca hoja. Para evaluación individual, abrir HTML en cada dispositivo; no hay recogida centralizada."><div class="header"><div class="kicker">16 / Práctica calificada · 20 puntos</div><h2>DESAFÍO <span class="accent">EVOLUCIÓN</span></h2></div><div class="layout"><div class="card"><h3>Reglas de la práctica</h3><div class="steps"><div>10 preguntas de selección múltiple.</div><div>4 alternativas por pregunta.</div><div>2 puntos por respuesta correcta.</div><div>Tiempo total sugerido: 18 minutos.</div></div><div class="hint">Modalidad pizarra: cada alumno registra sus alternativas en una hoja individual.</div></div><div class="card"><h3>Activar evaluación</h3><p>Si proyectas las preguntas, usa <b>Modo docente</b>: no revela la respuesta hasta finalizar la práctica.</p><div class="actions"><button class="btn yellow" onclick="startQuiz('teacher')">Iniciar modo pizarra</button><button class="btn secondary" onclick="startQuiz('student')">Modo individual</button></div><div class="source">El modo individual calcula la nota localmente; no transmite resultados al docente.</div></div></div></section>
-<section class="slide" data-note="Proyectar las preguntas y evitar pulsar Mostrar claves hasta recoger respuestas."><div class="header"><div class="kicker">17 / Evaluación interactiva</div><div class="toprow"><h2 id="quiz-head">Práctica de evolución</h2><span id="quiz-count" class="chip">Pregunta 1 de 10</span></div></div><div id="quiz-setup" class="card" style="max-width:900px"><h3>Antes de empezar</h3><p>Abre la prueba desde la pantalla anterior. También puedes escoger un modo aquí.</p><div class="actions"><button class="btn" onclick="startQuiz('teacher')">Modo pizarra</button><button class="btn secondary" onclick="startQuiz('student')">Modo individual</button></div></div><div id="quiz-board" class="layout wide hidden"><div class="card"><div id="quiz-q" class="question"></div><div id="quiz-options" style="margin-top:19px"></div></div><div class="card" style="display:flex;flex-direction:column"><div class="quizmeta"><span id="quiz-mode">Modo docente</span><span id="quiz-time">00:00</span></div><p id="quiz-help">Cada estudiante marca la alternativa en su hoja.</p><div class="actions" style="margin-top:auto"><button class="btn secondary" onclick="quizMove(-1)">← Anterior</button><button class="btn yellow" onclick="quizMove(1)">Siguiente →</button></div><button class="btn secondary" style="margin-top:15px" onclick="finishQuiz()">Terminar práctica</button><div class="source">Las preguntas no muestran las respuestas durante la evaluación.</div></div></div></section>
-<section class="slide" data-note="Al terminar, recoger hojas; luego mostrar clave y explicar dudas."><div class="header"><div class="kicker">18 / Cierre y resultados</div><h2>La ciencia se construye <span class="accent">con evidencias</span></h2></div><div class="layout"><div class="card"><h3 id="final-title">Una conclusión que permanece</h3><p id="final-message" style="margin-top:15px">Los fósiles, las estructuras anatómicas, el desarrollo, el ADN y la distribución de las especies nos ayudan a reconstruir la historia evolutiva.</p><div id="individual-score" class="hidden"><div class="score" id="score-total">20/20</div><p id="score-text">Nota individual</p></div><div class="actions"><button class="btn" onclick="toggleReveal('answer-key')">Mostrar / ocultar clave</button><button class="btn secondary" onclick="window.print()">Imprimir pantalla</button><button class="btn secondary" onclick="goTo(0)">Volver al inicio</button></div><div id="answer-key" class="reveal"><div class="keygrid" id="keys"></div></div></div><div class="svg-panel"><div style="text-align:center"><div class="hero-stat">5</div><h3>EVIDENCIAS</h3><div style="font-size:60px;margin:15px 0">🦴 🧬 🌎</div><p style="font-size:25px;color:#d3eefb">UNA HISTORIA EVOLUTIVA<br>RESPALDADA POR LA CIENCIA</p></div><div class="source" style="margin-top:30px">Referencias: Smithsonian Human Origins · HHMI BioInteractive · UC Berkeley Evolution</div></div></div></section>
-</main><div id="notes" class="teacher-note"><b>Notas de clase</b><span id="note-text"></span></div><div class="progress" id="progress"></div><footer class="footer"><div class="brand">TuProfe20 <span style="color:#ffda74">LAB</span></div><div class="tinylabel">EVIDENCIAS DE LA EVOLUCIÓN · PIZARRA DIGITAL</div><div class="nav"><span id="counter" class="tinylabel">01 / 18</span><button onclick="move(-1)" title="Anterior">←</button><button onclick="move(1)" title="Siguiente">→</button></div></footer>
-<script>
-const slides=[...document.querySelectorAll('.slide')];let index=0,notesVisible=false,interval=null,timerVal=0,quizIndex=0,quizMode='teacher',answers={},quizStart=0;
-function goTo(n){index=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===index));document.getElementById('counter').textContent=String(index+1).padStart(2,'0')+' / '+slides.length;document.getElementById('progress').style.width=((index+1)/slides.length*100)+'%';updateNotes();}function move(n){goTo(index+n)}function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen?.()}else{document.exitFullscreen?.()}}function toggleNotes(){notesVisible=!notesVisible;document.getElementById('notes').classList.toggle('show',notesVisible);updateNotes()}function updateNotes(){document.getElementById('note-text').textContent=slides[index].dataset.note||'Sin notas.'}function openLink(url){window.open(url,'_blank','noopener,noreferrer')}function toggleReveal(id){document.getElementById(id).classList.toggle('show')}
-document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown'].includes(e.key)){e.preventDefault();move(1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();move(-1)}if(e.key.toLowerCase()==='f')toggleFullscreen();if(e.key.toLowerCase()==='n')toggleNotes()});
-function showEvidence(i){const a=['Los fósiles conservan restos o rastros de organismos que vivieron en el pasado.','Las estructuras homólogas permiten estudiar un origen evolutivo compartido.','Las semejanzas embrionarias específicas ayudan a inferir parentescos.','Las secuencias de ADN permiten comparar información hereditaria.','La distribución geográfica ayuda a estudiar la diversificación de poblaciones.'];let d=document.getElementById('evidence-reveal');d.textContent=a[i];d.classList.add('show')}
-function showSummary(i){const a=['Fósiles → permiten estudiar organismos del pasado y cambios a lo largo del tiempo.','Anatomía → las homologías respaldan el origen común.','Embriología → las estructuras compartidas aportan pistas del parentesco.','ADN → las secuencias genéticas permiten contrastar hipótesis evolutivas.','Biogeografía → la distribución de las especies revela historias de aislamiento y diversificación.'];let d=document.getElementById('summary-answer');d.textContent=a[i];d.classList.add('show')}
-function judgeClass(id,v){let ok=(id==='a'&&v==='hom')||(id==='b'&&v==='ana');let d=document.getElementById('result-'+id);d.textContent=ok?'✓ Correcto. '+(id==='a'?'Los huesos correspondientes son homólogos.':'Las alas como órganos de vuelo son análogas.'):'Inténtalo otra vez: considera si comparten el mismo origen estructural.';d.classList.add('show');d.style.borderColor=ok?'#4ae1a3':'#e6b351'}
-const sequences=['ATGCCATGAA','ATGCCATTAA','TTAACGCGTT'];function renderDna(highlight=false){const labels=['A','B','C'];const d=document.getElementById('dna-seqs');d.innerHTML=sequences.map((s,i)=>`<div><span style="color:#fdd16d">${labels[i]}: </span>`+[...s].map((ch,j)=>`<span style="color:${highlight&&i<2&&sequences[0][j]===sequences[1][j]?'#5de6b1':highlight&&i<2?'#ff839e':'#d6faff'}">${ch}</span>`).join('')+'</div>').join('')}function compareDna(){renderDna(true);let d=document.getElementById('dna-answer');d.textContent='A y B coinciden en 9 de 10 posiciones. En este ejemplo ficticio, sus secuencias son las más parecidas. En investigación real se comparan múltiples secuencias homólogas.';d.classList.add('show')}function resetDna(){renderDna(false);document.getElementById('dna-answer').classList.remove('show')}renderDna();
-function drawHelix(target,xcenter,width,startY,height){let out='';for(let j=0;j<=18;j++){let t=j/18*Math.PI*4;let y=startY+height*j/18;let x1=xcenter+Math.sin(t)*width,x2=xcenter-Math.sin(t)*width;out+=`<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="${j%2?'#ffe081':'#59e6b9'}" stroke-width="6" opacity=".8"/>`;}let d1='',d2='';for(let j=0;j<=100;j++){let t=j/100*Math.PI*4,y=startY+height*j/100,x1=xcenter+Math.sin(t)*width,x2=xcenter-Math.sin(t)*width;d1+=(j?'L':'M')+x1.toFixed(1)+','+y.toFixed(1);d2+=(j?'L':'M')+x2.toFixed(1)+','+y.toFixed(1)}out+=`<path d="${d1}" stroke="#46dafe" stroke-width="10" fill="none"/><path d="${d2}" stroke="#57e8ae" stroke-width="10" fill="none"/>`;document.getElementById(target).innerHTML=out}drawHelix('hero-dna',250,100,90,310);drawHelix('dna-vertical',220,83,25,335);
-function startTimer(s){stopTimer();timerVal=s;drawTimer();interval=setInterval(()=>{timerVal--;drawTimer();if(timerVal<=0){stopTimer();alert('Tiempo finalizado')}} ,1000)}function drawTimer(){let el=document.getElementById('group-timer');el.textContent=String(Math.floor(timerVal/60)).padStart(2,'0')+':'+String(timerVal%60).padStart(2,'0')}function stopTimer(){if(interval){clearInterval(interval);interval=null}}
-const quiz=[
-{q:'¿Cuál de los siguientes hallazgos constituye evidencia paleontológica?',o:['El clima de una isla','Una huella fósil en una roca','Una corriente marina','Un cultivo de bacterias'],a:1},
-{q:'¿Qué información puede aportar un fósil al estudio evolutivo?',o:['La voluntad de adaptarse','El futuro de una especie','La existencia de organismos del pasado','El ADN completo de todos los organismos'],a:2},
-{q:'El brazo humano y la aleta de ballena son ejemplos de estructuras...',o:['Homólogas','Sin parentesco','Idénticas en función','Artificiales'],a:0},
-{q:'¿Qué ejemplo corresponde a órganos análogos como estructuras de vuelo?',o:['Brazo y aleta de ballena','Ala de insecto y ala de ave','Mano humana y pata delantera de gato','Antebrazo de humano y murciélago'],a:1},
-{q:'Las semejanzas específicas entre estructuras de embriones de vertebrados son evidencia...',o:['Paleontológica','Geográfica','Embriológica','Meteorológica'],a:2},
-{q:'¿Qué compara principalmente la evidencia molecular de la evolución?',o:['Secuencias de ADN y otras moléculas','Solo el tamaño corporal','Las capas de nubes','El color de los suelos'],a:0},
-{q:'Dos especies muestran grandes semejanzas en múltiples genes homólogos. Esto puede sugerir...',o:['Que son individuos idénticos','Que nunca evolucionaron','Que viven en el mismo lugar','Un parentesco evolutivo cercano'],a:3},
-{q:'¿Qué estudia la biogeografía como evidencia evolutiva?',o:['Las fases de la Luna','La distribución de los organismos','La velocidad de la luz','Solo la temperatura'],a:1},
-{q:'En los estudios de los pinzones de Galápagos, ¿qué característica fue importante para analizar la selección natural?',o:['Forma y tamaño del pico','Número de patas','Color del océano','Forma de las rocas'],a:0},
-{q:'¿Por qué las distintas evidencias hacen más sólida la explicación de la evolución?',o:['Porque todas son fotografías','Porque eliminan toda pregunta científica','Porque datos independientes pueden coincidir en una explicación','Porque una observación aislada basta'],a:2}];
-function startQuiz(mode){quizMode=mode;quizIndex=0;answers={};quizStart=Date.now();document.getElementById('quiz-setup').classList.add('hidden');document.getElementById('quiz-board').classList.remove('hidden');document.getElementById('quiz-mode').textContent=mode==='teacher'?'Modo pizarra':'Modo individual';document.getElementById('quiz-help').textContent=mode==='teacher'?'Cada estudiante marca su alternativa en su hoja de respuestas.':'Selecciona una alternativa por pregunta; al finalizar aparecerá tu nota.';goTo(16);renderQuiz()}
-function renderQuiz(){const q=quiz[quizIndex];document.getElementById('quiz-q').textContent=q.q;document.getElementById('quiz-count').textContent=`Pregunta ${quizIndex+1} de ${quiz.length}`;document.getElementById('quiz-options').innerHTML=q.o.map((o,i)=>`<button class="choice ${answers[quizIndex]===i?'selected':''}" onclick="selectChoice(${i})"><span class="letter">${'ABCD'[i]}.</span>${o}</button>`).join('');document.getElementById('quiz-time').textContent=String(Math.floor((Date.now()-quizStart)/60000)).padStart(2,'0')+':'+String(Math.floor((Date.now()-quizStart)/1000)%60).padStart(2,'0')}
-function selectChoice(i){if(quizMode==='teacher')return;answers[quizIndex]=i;renderQuiz()}function quizMove(n){let j=quizIndex+n;if(j>=quiz.length){finishQuiz();return}quizIndex=Math.max(0,j);renderQuiz()}function finishQuiz(){if(quizMode==='student'){const correct=quiz.reduce((sum,q,i)=>sum+(answers[i]===q.a),0);document.getElementById('individual-score').classList.remove('hidden');document.getElementById('score-total').textContent=(correct*2)+'/20';document.getElementById('score-text').textContent=correct+' respuestas correctas de 10.';document.getElementById('final-title').textContent='Tu resultado individual';document.getElementById('final-message').textContent='Revisa tus errores después de que el docente autorice ver la clave.'}else{document.getElementById('individual-score').classList.add('hidden');document.getElementById('final-title').textContent='Evaluación finalizada';document.getElementById('final-message').textContent='Recoge las hojas de los 25 estudiantes antes de proyectar las claves.'}document.getElementById('answer-key').classList.remove('show');document.getElementById('keys').innerHTML=quiz.map((q,i)=>`<div>${i+1}. <b>${'ABCD'[q.a]}</b></div>`).join('');goTo(17)}document.getElementById('keys').innerHTML=quiz.map((q,i)=>`<div>${i+1}. <b>${'ABCD'[q.a]}</b></div>`).join('');goTo(0);
-</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biología 3er Año — Evidencias de la Evolución</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- React & ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Three.js & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background-color: #020b06; /* Deep forest dark green */
+            font-family: 'Outfit', 'Inter', sans-serif; 
+            color: #ffffff;
+            user-select: none;
+        }
+        
+        #matrix-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            opacity: 0.25;
+            z-index: 1;
+        }
+
+        .perspective-grid {
+            position: absolute;
+            bottom: -18%;
+            left: -50%;
+            width: 200%;
+            height: 65vh;
+            background-image: 
+                linear-gradient(rgba(16, 185, 129, 0.15) 1px, transparent 1px), /* Emerald green tint */
+                linear-gradient(90deg, rgba(16, 185, 129, 0.15) 1px, transparent 1px);
+            background-size: 60px 60px;
+            transform: perspective(650px) rotateX(65deg);
+            transform-origin: bottom center;
+            pointer-events: none;
+            opacity: 0.6;
+            z-index: 2;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.1) 0%, rgba(2, 11, 6, 0.95) 75%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        #three-container {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.85;
+            pointer-events: none;
+        }
+
+        /* Styling variables */
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Animations */
+        @keyframes robot-celebrate {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-14px) rotate(-6deg) scale(1.08); }
+            75% { transform: translateY(-14px) rotate(6deg) scale(1.08); }
+        }
+        .animate-robot-celebrate { animation: robot-celebrate 0.5s ease-in-out infinite; }
+
+        @keyframes robot-sad {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            20% { transform: translateX(-8px) rotate(-4deg); }
+            40% { transform: translateX(8px) rotate(4deg); }
+            60% { transform: translateX(-6px) rotate(-2deg); }
+            80% { transform: translateX(6px) rotate(2deg); }
+        }
+        .animate-robot-sad { animation: robot-sad 0.7s ease-in-out infinite; }
+
+        @keyframes robot-think {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-5px) rotate(-3deg); }
+        }
+        .animate-robot-think { animation: robot-think 2s ease-in-out infinite; }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: rgba(2, 44, 34, 0.5); border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #10b981; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const COLORS = {
+            emerald: '#10b981', 
+            teal: '#14b8a6',
+            pink: '#f43f5e',
+            neonGreen: '#22c55e',
+            neonOrange: '#f97316',
+            neonYellow: '#eab308'
+        };
+
+        const QuestionsDB = [
+            {
+                q: "¿Cuál es la búsqueda fundamental en biología que mencionan al principio sobre nuestra especie?",
+                opts: [
+                    "Explicar el origen de los rasgos clave que distinguen a los humanos.",
+                    "Descubrir cómo los dinosaurios se extinguieron.",
+                    "Encontrar el eslabón perdido entre aves y reptiles.",
+                    "Analizar el clima de la Tierra hace millones de años."
+                ],
+                ans: 0,
+                fb: "Entender dónde y cuándo evolucionaron los rasgos que nos hacen humanos es una de las grandes preguntas de la biología evolutiva."
+            },
+            {
+                q: "¿Qué sugirió la teoría de la evolución de Charles Darwin respecto a la ascendencia humana?",
+                opts: [
+                    "Que los humanos evolucionaron directamente de los chimpancés actuales.",
+                    "Que los humanos y los simios africanos comparten un ancestro común.",
+                    "Que nuestra especie apareció de forma aislada en Europa.",
+                    "Que los primeros humanos tenían cerebros gigantes."
+                ],
+                ans: 1,
+                fb: "Darwin propuso que los humanos y los grandes simios africanos descienden de un mismo ancestro común, no que uno provenga del otro en su forma actual."
+            },
+            {
+                q: "Según los fósiles encontrados en Olduvai, ¿qué características tenían los primeros humanos en comparación con nosotros?",
+                opts: [
+                    "Caminaban en cuatro patas y tenían cerebros enormes.",
+                    "Eran idénticos a los humanos modernos pero más altos.",
+                    "Eran bípedos, con un cerebro mayor al de un chimpancé pero menor al nuestro.",
+                    "No sabían fabricar herramientas y solo vivían en los árboles."
+                ],
+                ans: 2,
+                fb: "Los fósiles revelaron una evolución gradual: ya caminaban en dos piernas (bípedos) y tenían un cerebro en etapa intermedia de crecimiento."
+            },
+            {
+                q: "¿Hace cuánto tiempo se estima que los humanos y los chimpancés se separaron evolutivamente?",
+                opts: [
+                    "Hace apenas 1 millón de años.",
+                    "Alrededor de 7 millones de años.",
+                    "Hace unos 65 millones de años.",
+                    "Hace más de 100 millones de años."
+                ],
+                ans: 1,
+                fb: "Utilizando técnicas biomoleculares, los investigadores estiman que la divergencia evolutiva ocurrió hace aproximadamente 7 millones de años."
+            },
+            {
+                q: "¿Por qué el ADN no basta para entender nuestra evolución y se necesitan los fósiles?",
+                opts: [
+                    "El ADN de los fósiles desaparece a los 100 años.",
+                    "La genética no tiene relación con la evolución.",
+                    "Los fósiles tienen secuencias de ADN más completas.",
+                    "El ADN no puede decirnos cuándo aparecieron físicamente rasgos específicos como el bipedalismo."
+                ],
+                ans: 3,
+                fb: "El ADN muestra relaciones y tiempo de separación, pero solo los fósiles pueden mostrarnos la forma física y cuándo surgieron cambios anatómicos exactos."
+            },
+            {
+                q: "El famoso descubrimiento del fósil llamado \"Lucy\" corresponde a la especie:",
+                opts: [
+                    "Australopithecus",
+                    "Homo sapiens",
+                    "Neanderthal",
+                    "Ardipithecus"
+                ],
+                ans: 0,
+                fb: "Lucy es uno de los especímenes más famosos de Australopithecus afarensis, confirmando características clave de la evolución homínida."
+            },
+            {
+                q: "¿A qué especie pertenece el esqueleto fósil \"Ardi\", que data de hace 4.4 millones de años?",
+                opts: [
+                    "Homo erectus",
+                    "Australopithecus afarensis",
+                    "Ardipithecus ramidus",
+                    "Homo habilis"
+                ],
+                ans: 2,
+                fb: "Ardi pertenece a la especie Ardipithecus ramidus, un hallazgo crucial por ser uno de los esqueletos homínidos más antiguos y completos."
+            },
+            {
+                q: "¿Qué revelaron los fósiles encontrados junto a Ardi sobre su hábitat?",
+                opts: [
+                    "Que vivió en un entorno boscoso, desafiando la idea de la sabana abierta.",
+                    "Que habitaba en un desierto extremadamente cálido.",
+                    "Que vivía en cuevas cubiertas de hielo permanente.",
+                    "Que pasaba toda su vida como animal acuático."
+                ],
+                ans: 0,
+                fb: "Durante mucho tiempo se pensó que el bipedalismo surgió en sabanas abiertas, pero el entorno boscoso de Ardi demostró que esto ocurrió antes, en los bosques."
+            },
+            {
+                q: "El descubrimiento de Ardi confirmó que el bipedalismo (caminar en dos piernas) es un rasgo:",
+                opts: [
+                    "Que evolucionó al mismo tiempo que el cerebro grande moderno.",
+                    "Muy antiguo, que apareció antes que la gran expansión del cerebro.",
+                    "Exclusivo de los Homo sapiens.",
+                    "Causado por el cambio climático reciente."
+                ],
+                ans: 1,
+                fb: "Ardi demostró que nuestros ancestros ya caminaban erguidos millones de años antes de desarrollar cerebros grandes o usar herramientas complejas."
+            },
+            {
+                q: "Después del Ardipithecus emergió el Australopithecus. ¿Qué características combinaban?",
+                opts: [
+                    "Dominaban el fuego y construían grandes refugios.",
+                    "Tenían cerebros gigantes pero caminaban en cuatro patas.",
+                    "Usaban herramientas de metal para cazar.",
+                    "Eran completamente bípedos, pero con cerebros pequeños y dientes grandes."
+                ],
+                ans: 3,
+                fb: "Esta combinación muestra que la evolución no ocurre en todos los rasgos al mismo tiempo. Eran bípedos, pero sus cabezas y cerebros seguían siendo primitivos."
+            }
+        ];
+
+        const SoundEngine = {
+            ctx: null,
+            isMuted: false,
+            bgmPlaying: false,
+            bgmTimer: null,
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    this.startBGM();
+                }
+                if (this.ctx.state === 'suspended') this.ctx.resume();
+            },
+            toggleMute(m) { this.isMuted = m; },
+            playTone(freq, type, duration, vol = 0.65) {
+                if (!this.ctx || this.isMuted) return;
+                try {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                    gain.gain.setValueAtTime(vol, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + duration);
+                } catch(e){}
+            },
+            playBGMNote(freq, type = 'sine', vol = 0.05, duration = 2.5) {
+                if (!this.ctx || this.isMuted) return;
+                try {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                    
+                    // Ataque suave y desvanecimiento lento (estilo piano/arpa clásica)
+                    gain.gain.setValueAtTime(0, this.ctx.currentTime);
+                    gain.gain.linearRampToValueAtTime(vol, this.ctx.currentTime + 0.2);
+                    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+                    
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + duration);
+                } catch(e){}
+            },
+            startBGM() {
+                if (this.bgmPlaying) return;
+                this.bgmPlaying = true;
+                
+                // Secuencia de acordes clásica, suave e inspiradora (Do Mayor, Sol Mayor, La Menor, Fa Mayor)
+                const seq = [
+                    261.63, 329.63, 392.00, 523.25, // Do Mayor (C)
+                    293.66, 392.00, 493.88, 587.33, // Sol Mayor (G)
+                    220.00, 261.63, 329.63, 440.00, // La Menor (Am)
+                    261.63, 349.23, 440.00, 523.25  // Fa Mayor (F)
+                ];
+                let i = 0;
+                
+                const loop = () => {
+                    if (!this.bgmPlaying) return;
+                    
+                    if (!this.isMuted && this.ctx && this.ctx.state === 'running') {
+                        // Tono principal suave y melódico
+                        this.playBGMNote(seq[i], 'sine', 0.06, 2.5);
+                        // Tono de apoyo con un poco más de cuerpo, una octava más abajo
+                        this.playBGMNote(seq[i] / 2, 'triangle', 0.03, 2.5); 
+                    }
+                    
+                    i = (i + 1) % seq.length;
+                    this.bgmTimer = setTimeout(loop, 450); // Ritmo tranquilo para estudiar
+                };
+                loop();
+            },
+            hover() { this.playTone(900, 'sine', 0.05, 0.1); },
+            click() { this.playTone(800, 'square', 0.05, 0.2); },
+            tick() { this.playTone(1000, 'sine', 0.05, 0.05); },
+            success() {
+                this.playTone(400, 'sine', 0.1, 0.3);
+                setTimeout(() => this.playTone(600, 'sine', 0.1, 0.3), 100);
+                setTimeout(() => this.playTone(800, 'sine', 0.3, 0.3), 200);
+            }
+        };
+
+        const SpeakerIcon = () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 text-emerald-400"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>;
+        const SpeakerXIcon = () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6 text-pink-500"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>;
+
+        const BioParticlesBackground = () => {
+            const canvasRef = useRef(null);
+            
+            useEffect(() => {
+                const canvas = canvasRef.current;
+                if (!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let animId;
+                let w = canvas.width = window.innerWidth;
+                let h = canvas.height = window.innerHeight;
+                
+                const handleResize = () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; };
+                window.addEventListener('resize', handleResize);
+
+                const symbols = ['🧬', '🦴', '🌍', '🐒', '👨‍🔬', 'Fósil', 'ADN', 'Evolución'];
+                const colors = ['#10b981', '#34d399', '#059669', '#fbbf24', '#38bdf8'];
+                
+                const particles = Array.from({ length: 60 }).map(() => ({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: (Math.random() - 0.5) * 1.5,
+                    vy: (Math.random() - 0.5) * 1.5,
+                    r: Math.random() * 4 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    text: Math.random() > 0.75 ? symbols[Math.floor(Math.random() * symbols.length)] : null,
+                    pulse: Math.random() * Math.PI * 2
+                }));
+
+                const draw = () => {
+                    ctx.clearRect(0, 0, w, h);
+                    
+                    for (let i = 0; i < particles.length; i++) {
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx*dx + dy*dy);
+                            if (dist < 120) {
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.strokeStyle = particles[i].color;
+                                ctx.globalAlpha = 0.1 * (1 - dist/120);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+
+                    particles.forEach(p => {
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        p.pulse += 0.03;
+
+                        if (p.x < 0 || p.x > w) p.vx *= -1;
+                        if (p.y < 0 || p.y > h) p.vy *= -1;
+
+                        ctx.globalAlpha = 0.3 + Math.sin(p.pulse) * 0.3;
+                        
+                        if (p.text) {
+                            ctx.font = 'bold 18px "JetBrains Mono"';
+                            ctx.fillStyle = p.color;
+                            ctx.textAlign = 'center';
+                            ctx.fillText(p.text, p.x, p.y);
+                        } else {
+                            ctx.beginPath();
+                            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                            ctx.fillStyle = p.color;
+                            ctx.fill();
+                        }
+                    });
+                    
+                    ctx.globalAlpha = 1;
+                    animId = requestAnimationFrame(draw);
+                };
+                draw();
+                return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', handleResize); };
+            }, []);
+
+            return <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none opacity-60" />;
+        };
+
+        const BioSimulation3D = ({ simRef }) => {
+            const mountRef = useRef(null);
+
+            useEffect(() => {
+                if (!mountRef.current) return;
+                
+                const scene = new THREE.Scene(); 
+                scene.fog = new THREE.FogExp2(0x020b06, 0.012);
+                
+                const camera = new THREE.PerspectiveCamera(50, window.innerWidth/window.innerHeight, 0.1, 1000);
+                camera.position.set(0, 0, 40); 
+                
+                const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
+                mountRef.current.appendChild(renderer.domElement);
+
+                scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+                
+                const colorNormal = new THREE.Color(0x10b981); // Emerald
+                let currentColor = colorNormal.clone();
+
+                const MAX_NODES = 250;
+                let activeNodes = 120;
+                let connectionThreshold = 18;
+                let simSpeed = 1.0;
+
+                const nodesGeometry = new THREE.BufferGeometry();
+                const positions = new Float32Array(MAX_NODES * 3);
+                const velocities = [];
+
+                for (let i = 0; i < MAX_NODES; i++) {
+                    const r = 18;
+                    const theta = Math.random() * Math.PI * 2;
+                    const phi = Math.acos((Math.random() * 2) - 1);
+                    
+                    positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+                    positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+                    positions[i * 3 + 2] = r * Math.cos(phi);
+
+                    velocities.push(new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.1,
+                        (Math.random() - 0.5) * 0.1,
+                        (Math.random() - 0.5) * 0.1
+                    ));
+                }
+
+                nodesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                nodesGeometry.setDrawRange(0, activeNodes);
+
+                const materialSphere = new THREE.PointsMaterial({
+                    color: currentColor,
+                    size: 1.2,
+                    transparent: true,
+                    opacity: 0.9,
+                    sizeAttenuation: true
+                });
+                
+                const pointCloud = new THREE.Points(nodesGeometry, materialSphere);
+                scene.add(pointCloud);
+
+                // Lines structure
+                const linesGeometry = new THREE.BufferGeometry();
+                const maxLines = (MAX_NODES * (MAX_NODES - 1)) / 2;
+                const linePositions = new Float32Array(maxLines * 6);
+                linesGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+                
+                const lineMaterial = new THREE.LineBasicMaterial({
+                    color: currentColor,
+                    transparent: true,
+                    opacity: 0.25
+                });
+                const linesMesh = new THREE.LineSegments(linesGeometry, lineMaterial);
+                scene.add(linesMesh);
+
+                let mouseX = 0, mouseY = 0;
+                const handleMouseMove = (e) => { 
+                    mouseX = ((e.clientX / window.innerWidth) * 2 - 1) * 8; 
+                    mouseY = ((e.clientY / window.innerHeight) * 2 - 1) * 8; 
+                };
+                document.addEventListener('mousemove', handleMouseMove);
+                
+                const handleResize = () => { 
+                    camera.aspect = window.innerWidth / window.innerHeight; 
+                    camera.updateProjectionMatrix(); 
+                    renderer.setSize(window.innerWidth, window.innerHeight); 
+                };
+                window.addEventListener('resize', handleResize);
+
+                simRef.current = {
+                    pulse: () => {
+                        gsap.to(camera.position, { z: 35, duration: 0.5, yoyo: true, repeat: 1 });
+                    }
+                };
+
+                let animId;
+                const anim = () => {
+                    animId = requestAnimationFrame(anim);
+                    
+                    const time = Date.now() * 0.0005;
+                    camera.position.x += (mouseX + Math.sin(time)*4 - camera.position.x) * 0.02;
+                    camera.position.y += (-mouseY - camera.position.y) * 0.02;
+                    camera.lookAt(0,0,0);
+
+                    const posAttr = nodesGeometry.attributes.position;
+                    let lineIndex = 0;
+
+                    for (let i = 0; i < activeNodes; i++) {
+                        let vx = velocities[i].x * simSpeed;
+                        let vy = velocities[i].y * simSpeed;
+                        let vz = velocities[i].z * simSpeed;
+
+                        let px = posAttr.getX(i) + vx;
+                        let py = posAttr.getY(i) + vy;
+                        let pz = posAttr.getZ(i) + vz;
+
+                        // Soft boundary constraints
+                        const distToCenter = Math.sqrt(px*px + py*py + pz*pz);
+                        if (distToCenter > 22) {
+                            velocities[i].x -= (px / distToCenter) * 0.02;
+                            velocities[i].y -= (py / distToCenter) * 0.02;
+                            velocities[i].z -= (pz / distToCenter) * 0.02;
+                        }
+
+                        posAttr.setXYZ(i, px, py, pz);
+
+                        // Connections
+                        for (let j = i + 1; j < activeNodes; j++) {
+                            const px2 = posAttr.getX(j);
+                            const py2 = posAttr.getY(j);
+                            const pz2 = posAttr.getZ(j);
+
+                            const distSq = (px-px2)**2 + (py-py2)**2 + (pz-pz2)**2;
+                            if (distSq < connectionThreshold * connectionThreshold) {
+                                linePositions[lineIndex++] = px;
+                                linePositions[lineIndex++] = py;
+                                linePositions[lineIndex++] = pz;
+                                linePositions[lineIndex++] = px2;
+                                linePositions[lineIndex++] = py2;
+                                linePositions[lineIndex++] = pz2;
+                            }
+                        }
+                    }
+
+                    posAttr.needsUpdate = true;
+                    linesGeometry.setDrawRange(0, lineIndex / 3);
+                    linesGeometry.attributes.position.needsUpdate = true;
+                    
+                    pointCloud.rotation.y += 0.001 * simSpeed;
+                    linesMesh.rotation.y += 0.001 * simSpeed;
+
+                    renderer.render(scene, camera);
+                };
+                anim();
+
+                return () => {
+                    cancelAnimationFrame(animId);
+                    window.removeEventListener('resize', handleResize);
+                    document.removeEventListener('mousemove', handleMouseMove);
+                    if (mountRef.current) mountRef.current.innerHTML = '';
+                };
+            }, []);
+
+            return <div ref={mountRef} id="three-container" />;
+        };
+
+        const ProfeBot = ({ color = '#10b981', mood = 'idle', className="w-full h-full" }) => {
+            let animClass = '';
+            if (mood === 'celebrate' || mood === 'happy') animClass = 'animate-robot-celebrate';
+            else if (mood === 'sad') animClass = 'animate-robot-sad';
+            else if (mood === 'thinking') animClass = 'animate-robot-think';
+            const orbColor = (mood === 'celebrate' || mood === 'happy') ? '#34d399' : (mood === 'sad' ? '#ef4444' : color);
+
+            return (
+                <svg viewBox="0 0 100 100" className={`${className} ${animClass}`} style={{ filter: 'drop-shadow(0 6px 14px rgba(0,0,0,0.6))' }}>
+                    <defs>
+                        <radialGradient id={`glow-${color.replace('#','')}`} cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stopColor="#fff" stopOpacity="1" />
+                            <stop offset="40%" stopColor={orbColor} stopOpacity="0.8" />
+                            <stop offset="100%" stopColor={orbColor} stopOpacity="0" />
+                        </radialGradient>
+                    </defs>
+                    {/* Antenna */}
+                    <rect x="47" y="10" width="6" height="14" rx="3" fill="#94a3b8" />
+                    <circle cx="50" cy="11" r="14" fill={`url(#glow-${color.replace('#','')})`} />
+                    <circle cx="50" cy="11" r="6.5" fill={orbColor} />
+                    <circle cx="48" cy="9" r="2.5" fill="#fff" />
+                    {/* Ears */}
+                    <rect x="8" y="32" width="16" height="9" rx="4.5" fill="#cbd5e1" stroke="#475569" strokeWidth="2.5" transform="rotate(-32 16 36)" />
+                    <rect x="76" y="32" width="16" height="9" rx="4.5" fill="#cbd5e1" stroke="#475569" strokeWidth="2.5" transform="rotate(32 84 36)" />
+                    {/* Head */}
+                    <rect x="18" y="22" width="64" height="64" rx="22" fill="#e2e8f0" stroke="#475569" strokeWidth="2.5" />
+                    <rect x="21" y="25" width="58" height="58" rx="19" fill="#f8fafc" />
+                    {/* Screen */}
+                    <rect x="27" y="31" width="46" height="46" rx="14" fill="#022c22" stroke="#064e3b" strokeWidth="2" />
+                    
+                    {/* Expressions */}
+                    {(mood === 'idle' || mood === 'happy' || mood === 'celebrate') && (
+                        <g>
+                            <path d="M 33 49 A 6 6 0 0 1 45 49 Z" fill={color} />
+                            <path d="M 55 49 A 6 6 0 0 1 67 49 Z" fill={color} />
+                            <circle cx="34" cy="56" r="2.8" fill="#f43f5e" opacity="0.6" />
+                            <circle cx="66" cy="56" r="2.8" fill="#f43f5e" opacity="0.6" />
+                            <path d="M 37 56 Q 50 75 63 56 Z" fill="#ff6b81" />
+                        </g>
+                    )}
+                    {mood === 'sad' && (
+                        <g>
+                            <path d="M 34 45 L 44 53 M 44 45 L 34 53" stroke={color} strokeWidth="3" strokeLinecap="round" />
+                            <path d="M 56 45 L 66 53 M 66 45 L 56 53" stroke={color} strokeWidth="3" strokeLinecap="round" />
+                            <path d="M 40 67 Q 50 58 60 67" stroke="#ff6b81" strokeWidth="3" strokeLinecap="round" fill="none" />
+                        </g>
+                    )}
+                    {mood === 'thinking' && (
+                        <g>
+                            <circle cx="39" cy="48" r="5" fill={color} />
+                            <circle cx="41" cy="46" r="2" fill="#fff" />
+                            <circle cx="61" cy="48" r="5" fill={color} />
+                            <circle cx="63" cy="46" r="2" fill="#fff" />
+                            <circle cx="50" cy="64" r="3.5" fill="#ff6b81" />
+                        </g>
+                    )}
+                </svg>
+            );
+        };
+
+        function App() {
+            const [screen, setScreen] = useState('START'); // START, PLAY, WAIT_REVIEW, REVIEW, END
+            const [stepIndex, setStepIndex] = useState(0);
+            const [timeLeft, setTimeLeft] = useState(60);
+            const [isMuted, setIsMuted] = useState(false);
+
+            const simRef = useRef(null);
+            const currentStep = QuestionsDB[stepIndex];
+
+            useEffect(() => {
+                SoundEngine.init();
+                
+                // Para evadir el bloqueo de autoplay del navegador: 
+                // Iniciamos el ambiente sonoro al PRIMER clic que el usuario haga en toda la página.
+                const startAudioOnInteraction = () => {
+                    SoundEngine.startAmbient();
+                    document.removeEventListener('click', startAudioOnInteraction);
+                };
+                document.addEventListener('click', startAudioOnInteraction);
+                
+                return () => document.removeEventListener('click', startAudioOnInteraction);
+            }, []);
+
+            // Cronómetro de 1 minuto (60 seg) por pregunta en modo PLAY
+            useEffect(() => {
+                let interval;
+                if (screen === 'PLAY' && timeLeft > 0) {
+                    interval = setInterval(() => {
+                        setTimeLeft(prev => {
+                            if (prev <= 6 && !isMuted) SoundEngine.tick();
+                            return prev - 1;
+                        });
+                    }, 1000);
+                } else if (screen === 'PLAY' && timeLeft === 0) {
+                    handleNextQuestion();
+                }
+                return () => clearInterval(interval);
+            }, [screen, timeLeft, isMuted]);
+
+            const toggleMute = () => { 
+                setIsMuted(!isMuted); 
+                SoundEngine.toggleMute(!isMuted); 
+            };
+
+            const startEvaluation = () => {
+                SoundEngine.init(); // Asegurarnos de que el contexto de audio arranque al hacer click
+                SoundEngine.click();
+                setStepIndex(0);
+                setTimeLeft(60);
+                setScreen('PLAY');
+            };
+
+            const handleNextQuestion = () => {
+                if (stepIndex < QuestionsDB.length - 1) {
+                    setStepIndex(prev => prev + 1);
+                    setTimeLeft(60);
+                    SoundEngine.success(); 
+                    if (simRef.current) simRef.current.pulse();
+                } else {
+                    setScreen('WAIT_REVIEW');
+                }
+            };
+
+            const handleNextReview = () => {
+                SoundEngine.click();
+                if (stepIndex < QuestionsDB.length - 1) {
+                    setStepIndex(prev => prev + 1);
+                } else {
+                    setScreen('END');
+                }
+            };
+
+            const renderPlay = () => (
+                <main className="flex-1 p-8 flex flex-col md:flex-row gap-10 relative z-10 w-full h-full max-w-[1920px] mx-auto pt-32">
+                    {/* PANEL IZQUIERDO: CRONÓMETRO */}
+                    <div className="w-full md:w-4/12 flex flex-col gap-8 h-full z-20">
+                        <div className="bg-[#03150d]/90 border border-emerald-900/50 p-10 rounded-[2.5rem] flex-1 flex flex-col items-center justify-center shadow-xl backdrop-blur-sm relative overflow-hidden">
+                            <div className={`absolute inset-0 bg-red-500/10 transition-opacity duration-1000 ${timeLeft <= 10 ? 'opacity-100 animate-pulse' : 'opacity-0'}`}></div>
+                            
+                            <h3 className="text-2xl font-black text-emerald-600 tracking-[0.2em] uppercase mb-8 relative z-10">Tiempo Restante</h3>
+                            
+                            <div className={`text-[130px] font-mono font-black tabular-nums transition-colors leading-none relative z-10 ${timeLeft <= 10 ? 'text-red-500' : 'text-emerald-400 drop-shadow-[0_0_20px_rgba(16,185,129,0.4)]'}`}>
+                                {timeLeft.toString().padStart(2, '0')}
+                            </div>
+                            
+                            <p className="mt-10 text-slate-400 text-center text-xl max-w-xs relative z-10">
+                                Selecciona la alternativa correcta en tu ficha. La evaluación avanzará automáticamente.
+                            </p>
+                            
+                            <button onClick={() => {SoundEngine.click(); handleNextQuestion();}} className="mt-8 px-6 py-3 bg-[#051c11] hover:bg-[#0a2e1f] text-emerald-400 border border-emerald-900/50 hover:border-emerald-500/50 rounded-full font-bold uppercase tracking-widest transition-all shadow-md active:scale-95 relative z-10">
+                                Saltar Tiempo ⏭
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* PANEL DERECHO: PREGUNTA */}
+                    <div className="w-full md:w-8/12 flex flex-col h-full z-20">
+                        <div className="bg-[#03150d]/90 border border-emerald-900/50 p-12 md:p-16 rounded-[3rem] flex-1 flex flex-col justify-center relative shadow-xl backdrop-blur-sm">
+                            <div className="absolute top-8 right-10 text-sm font-black tracking-[0.25em] text-emerald-500/60 uppercase">Pregunta {stepIndex + 1}/10</div>
+                            <h4 className="text-3xl md:text-5xl font-bold mb-14 text-left text-white leading-tight">{currentStep.q}</h4>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {currentStep.opts.map((optText, idx) => (
+                                    <div key={idx} className="bg-[#061e14] border-2 border-emerald-900/60 p-6 rounded-3xl text-left shadow-md flex items-center gap-6">
+                                        <span className="w-14 h-14 rounded-xl bg-[#03150d] border border-emerald-800/50 text-emerald-400 font-black text-2xl flex items-center justify-center shrink-0 shadow-inner">
+                                            {['A', 'B', 'C', 'D'][idx]}
+                                        </span>
+                                        <span className="text-xl md:text-2xl font-medium text-slate-200 leading-snug">{optText}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            );
+
+            const renderReview = () => (
+                <main className="flex-1 p-8 flex flex-col md:flex-row gap-10 relative z-10 w-full h-full max-w-[1920px] mx-auto pt-32">
+                    {/* PANEL IZQUIERDO: RETROALIMENTACIÓN */}
+                    <div className="w-full md:w-5/12 flex flex-col h-full z-20">
+                        <div className="bg-[#03150d]/90 border border-emerald-900/50 p-10 rounded-[2.5rem] flex-1 flex flex-col shadow-xl backdrop-blur-sm">
+                            <div className="flex justify-between items-center mb-8 pb-6 border-b border-emerald-900/50">
+                                <span className="font-black text-emerald-400 text-2xl tracking-widest uppercase">Solucionario</span>
+                                <span className="text-sm bg-emerald-900/50 border border-emerald-500 text-emerald-300 font-bold px-5 py-2 rounded-full uppercase">Pregunta {stepIndex + 1}/10</span>
+                            </div>
+                            
+                            <div className="flex-1 flex flex-col items-center justify-center text-center">
+                                <div className="w-40 h-40 mb-8"><ProfeBot color={COLORS.emerald} mood="celebrate" /></div>
+                                <h3 className="text-2xl font-bold text-emerald-500 mb-6 uppercase tracking-widest">Retroalimentación</h3>
+                                <p className="text-2xl text-white leading-relaxed font-normal">{currentStep.fb}</p>
+                            </div>
+                            
+                            <button onClick={handleNextReview} className="mt-8 w-full py-6 px-8 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-black text-2xl rounded-2xl active:scale-95 transition-all uppercase tracking-wider shadow-[0_0_30px_rgba(16,185,129,0.4)]">
+                                {stepIndex < QuestionsDB.length - 1 ? 'Siguiente Pregunta ⏭' : 'Finalizar Revisión'}
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* PANEL DERECHO: RESPUESTA ILUMINADA */}
+                    <div className="w-full md:w-7/12 flex flex-col h-full z-20">
+                        <div className="bg-[#03150d]/90 border border-emerald-900/50 p-12 md:p-16 rounded-[3rem] flex-1 flex flex-col justify-center relative shadow-xl backdrop-blur-sm">
+                            <h4 className="text-3xl md:text-5xl font-bold mb-14 text-left text-white leading-tight">{currentStep.q}</h4>
+                            
+                            <div className="grid grid-cols-1 gap-6">
+                                {currentStep.opts.map((optText, idx) => {
+                                    const isCorrect = idx === currentStep.ans;
+                                    return (
+                                        <div key={idx} className={`border-4 p-6 rounded-3xl text-left shadow-lg flex items-center gap-6 transition-all ${isCorrect ? 'bg-emerald-900/40 border-emerald-400 transform scale-[1.02]' : 'bg-[#061e14] border-emerald-900/20 opacity-40'}`}>
+                                            <span className={`w-14 h-14 rounded-xl font-black text-2xl flex items-center justify-center shrink-0 ${isCorrect ? 'bg-emerald-400 text-black shadow-[0_0_20px_rgba(52,211,153,0.6)]' : 'bg-[#03150d] text-slate-500 border border-emerald-900/50'}`}>
+                                                {['A', 'B', 'C', 'D'][idx]}
+                                            </span>
+                                            <span className={`text-xl md:text-3xl font-medium leading-snug ${isCorrect ? 'text-white' : 'text-slate-400'}`}>{optText}</span>
+                                            {isCorrect && (
+                                                <div className="ml-auto">
+                                                    <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            );
+
+            return (
+                <div className="w-full h-screen bg-[#020b06] text-white flex flex-col overflow-hidden relative font-sans">
+                    <BioSimulation3D simRef={simRef} />
+                    <div className="perspective-grid" />
+                    <div className="ambient-glow" />
+
+                    {(screen !== 'START' && screen !== 'END' && screen !== 'WAIT_REVIEW') && (
+                        <header className="absolute top-0 w-full h-28 bg-[#020e08]/80 backdrop-blur-xl border-b border-emerald-900/50 px-10 flex items-center justify-between z-40 shadow-lg">
+                            <div className="flex flex-col">
+                                <h1 className="text-3xl font-black tracking-wider leading-none">
+                                    <span className="text-white">TUPROFE20</span> <span className="text-emerald-400">LAB</span>
+                                </h1>
+                                <span className="text-[12px] font-bold tracking-[0.3em] text-slate-400 mt-2 uppercase">BIOLOGÍA • 3ER AÑO DE SECUNDARIA</span>
+                            </div>
+                            
+                            <div className="flex items-center gap-8">
+                                <button onClick={toggleMute} className="w-14 h-14 bg-[#051c11] hover:bg-[#0a2e1f] border border-emerald-900/60 rounded-2xl flex items-center justify-center transition-all">
+                                    {isMuted ? <SpeakerXIcon /> : <SpeakerIcon />}
+                                </button>
+                            </div>
+                        </header>
+                    )}
+
+                    {screen === 'START' && (
+                        <div className="absolute inset-0 z-50 flex items-center justify-center p-6 overflow-hidden">
+                            <BioParticlesBackground />
+                            <div className="max-w-4xl w-full bg-[#03150d]/95 border border-emerald-500/30 rounded-[3rem] p-16 flex flex-col items-center text-center shadow-[0_0_80px_rgba(16,185,129,0.15)] backdrop-blur-2xl relative z-10">
+                                <span className="text-sm font-black tracking-[0.35em] text-emerald-400 uppercase mb-4">TUPROFE20 LAB • CURSO DE BIOLOGÍA</span>
+                                <h1 className="text-5xl sm:text-7xl font-black tracking-wider text-white uppercase drop-shadow-[0_0_20px_rgba(16,185,129,0.5)] mb-2">
+                                    BIOLOGÍA 3ER AÑO
+                                </h1>
+                                <h2 className="text-5xl sm:text-6xl font-black uppercase mb-12 bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                                    EVIDENCIAS DE LA EVOLUCIÓN
+                                </h2>
+                                <div className="w-48 h-48 mb-12"><ProfeBot color={COLORS.emerald} mood="happy" /></div>
+                                <button onClick={startEvaluation} onMouseEnter={() => SoundEngine.hover()} className="w-full max-w-md py-6 px-10 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-black text-2xl rounded-full shadow-[0_0_40px_rgba(16,185,129,0.4)] active:scale-95 transition-all uppercase tracking-widest">
+                                    INICIAR EVALUACIÓN
+                                </button>
+                            </div>
+                        </div>
+                    )}
+                    
+                    {screen === 'PLAY' && renderPlay()}
+                    
+                    {screen === 'WAIT_REVIEW' && (
+                        <div className="absolute inset-0 z-50 flex flex-col justify-center items-center p-10 bg-[#020b06]/95 backdrop-blur-xl">
+                            <BioParticlesBackground />
+                            <div className="max-w-4xl w-full bg-[#03150d]/95 border-2 border-emerald-400 rounded-[3rem] shadow-[0_0_90px_rgba(16,185,129,0.3)] p-20 flex flex-col items-center text-center relative z-10">
+                                <h2 className="text-5xl font-black text-white uppercase mb-8">Evaluación Finalizada</h2>
+                                <p className="text-3xl text-slate-300 mb-12 font-medium">Alumnos, por favor entreguen sus fichas de respuestas al profesor.</p>
+                                <div className="w-56 h-56 mb-12"><ProfeBot color={COLORS.emerald} mood="idle" /></div>
+                                <button onClick={() => { SoundEngine.click(); setScreen('REVIEW'); setStepIndex(0); }} onMouseEnter={() => SoundEngine.hover()} className="py-6 px-12 bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-black text-2xl rounded-2xl shadow-[0_0_35px_rgba(16,185,129,0.4)] active:scale-95 uppercase tracking-wider transition-all">
+                                    Autorizar Solucionario
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+                    {screen === 'REVIEW' && renderReview()}
+
+                    {screen === 'END' && (
+                        <div className="absolute inset-0 z-50 flex flex-col justify-center items-center p-10 bg-[#020b06]/95 backdrop-blur-xl">
+                            <div className="max-w-4xl w-full bg-[#03150d] border-2 border-emerald-400 rounded-[3rem] shadow-[0_0_90px_rgba(16,185,129,0.3)] p-20 flex flex-col items-center text-center relative overflow-hidden">
+                                <div className="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+                                <h2 className="text-6xl font-black text-white tracking-tight uppercase mb-12 relative z-10">REVISIÓN CONCLUIDA</h2>
+                                <div className="w-64 h-64 mb-16 relative z-10"><ProfeBot color={COLORS.emerald} mood="celebrate" /></div>
+                                <button onClick={() => window.location.reload()} onMouseEnter={() => SoundEngine.hover()} className="py-6 px-14 bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-black text-2xl rounded-2xl shadow-[0_0_35px_rgba(16,185,129,0.4)] transition-all active:scale-95 uppercase tracking-wider relative z-10">
+                                    Regresar al Inicio
+                                </button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
